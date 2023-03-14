@@ -1,0 +1,196 @@
+.swiper {
+  &-button {
+    position: relative;
+    left: auto;
+    right: auto;
+    top: auto;
+    margin: 0;
+    width: 20px;
+    height: 30px;
+    background: #EEF5FF;
+    border-radius: 2px;
+    padding: 0;
+    opacity: 1;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:after {
+      opacity: 0;
+    }
+
+    svg {
+      stroke: #59A5FF;
+      stroke-width: 1;
+    }
+    &:before,
+    &:after {
+      width: 8px;
+      height: 12px;
+      content: '';
+      background-size: contain !important;
+      transition: all 0.3s ease;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+    &:before {
+      background: url(../images/icons/arw-blue.svg) no-repeat center;
+    }
+    &:after {
+      background: url(../images/icons/arw-white.svg) no-repeat center;
+      opacity: 0;
+    }
+    &:hover {
+      background: #59A5FF;
+      &:before {
+        opacity: 0;
+      }
+      &:after {
+        opacity: 1;
+      }
+    }
+    &:active {
+      background: #0075FF;
+      &:before {
+        opacity: 0;
+      }
+      &:after {
+        opacity: 1;
+      }
+    }
+    &-prev {
+      &:before,
+      &:after {
+        transform: translate(-50%, -50%) rotate(-180deg);
+      }
+    }
+    &-next {
+      margin-left: 10px;
+    }
+  }
+  &-pagination {
+    position: relative;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto !important;
+    &-bullet {
+      width: 8px;
+      height: 8px;
+      background: #E8E8E8;
+      border: 0;
+      border-radius: 50%;
+      margin: 0 2px 0 3px !important;
+      opacity: 1 !important;
+      display: flex;
+      transition: all 0.3s ease;
+      &:first-child {
+        margin-left: 0 !important;
+      }
+      &:before {
+        display: none;
+      }
+      &:hover {
+        background: #828282;
+      }
+      &:active {
+        background: #000000;
+      }
+      &-active {
+        background: #000000;
+      }
+    }
+  }
+  &-nav {
+    display: flex;
+    justify-content: space-between;
+    height: 45px;
+    background: #FBFBFB;
+    border-radius: 0 0 10px 10px;
+    padding: 0 17px 0 21px;
+    @include laptop {
+      display: none;
+    }
+
+  }
+  &-buttons {
+    display: flex;
+    align-items: center;
+  }
+  &-info {
+    @include laptop {
+      margin-right: -300px;
+      padding-right: 300px;
+    }
+    .swiper-slide {
+      min-height: 235px;
+      background-position: top left !important;
+      background-size: cover !important;
+      @include laptop {
+        max-height: 190px;
+        min-height: 190px;
+        width: 190px !important;
+        max-width: 190px;
+      }
+      @include mobile-s {
+        max-height: 158px;
+        min-height: 158px;
+        width: 158px !important;
+        max-width: 158px;
+
+      }
+    }
+    @include laptop {
+      background: none;
+      box-shadow: none;
+      .swiper-slide {
+        background: #FFFFFF;
+        box-shadow: 0 2.03571px 9.5px rgba(0, 0, 0, 0.05);
+        border-radius: 6px;
+
+      }
+    }
+    &__button {
+      height: 50px;
+      padding: 10px 38px;
+      font-size: $fs-15;
+      @include laptop {
+        font-size: $fs-12;
+        height: 37px;
+        padding: 10px 26px;
+      }
+    }
+  }
+  &-logos {
+    height: 258px;
+    .swiper-slide {
+      height: calc((100% - 30px) / 2) !important;
+    }
+    &__button {
+      width: 37px;
+      height: 49px;
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 3px;
+      margin-left: 10px;
+      cursor: pointer;
+      svg {
+        fill: #FFFFFF;
+      }
+      &-prev {
+        svg {
+          transform: rotate(-180deg);
+        }
+      }
+      &.swiper-button-disabled {
+        opacity: 0.5;
+        cursor: default;
+      }
+    }
+  }
+}

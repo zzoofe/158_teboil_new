@@ -1,0 +1,8 @@
+mixin title(data, tag)
+	case tag
+		when 'h1': h1&attributes(attributes): != data
+		when 'h3': h3&attributes(attributes): != data
+		when 'h4': h4&attributes(attributes): != data
+		when 'h5': h5&attributes(attributes): != data
+		when 'h6': h6&attributes(attributes): != data
+		default: h2&attributes(attributes): != data

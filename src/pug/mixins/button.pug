@@ -1,0 +1,8 @@
+mixin button(button)
+	if(button.url)
+		a.button(href=button.url)&attributes(attributes): != button.value
+	else
+		if(button.value)
+			button.button&attributes(attributes): != button.value
+		else
+			button.button&attributes(attributes): != button

@@ -1,0 +1,9 @@
+mixin block(data, tag, url)
+	case tag
+		when 'p': p&attributes(attributes): != data
+		when 'span': span&attributes(attributes): != data
+		when 'b': b&attributes(attributes): != data
+		when 'i': i&attributes(attributes): != data
+		when 'a': a(href=url)&attributes(attributes): != data
+		default: div&attributes(attributes): != data
+

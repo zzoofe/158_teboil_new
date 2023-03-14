@@ -1,0 +1,15 @@
+extends pug/base
+
+prepend vars
+	- title = 'TEBOIL'
+	- description = ''
+	- image = ''
+
+append vars
+	- link.icon = './favicon.png'
+
+block content
+	include pug/data
+	.app
+		include pug/pages/home
+	include pug/modal/passRecovery

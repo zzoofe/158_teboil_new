@@ -1,0 +1,13 @@
+mixin menu(items, active)
+	ul&attributes(attributes)
+		each item, key in items
+			if(active === key)
+				li.is-active
+					a(href=item.url)
+						+svg(item.icon)(width="17" height="17")
+						!= item.value
+			else
+				li
+					a(href=item.url)
+						+svg(item.icon)(width="17" height="17")
+						!= item.value

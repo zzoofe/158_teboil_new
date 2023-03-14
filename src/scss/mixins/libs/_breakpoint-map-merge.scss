@@ -1,0 +1,28 @@
+@function breakpointMapMerge($list-a, $list-b, $placeholder: inherit) {
+	$list-result: $list-a;
+
+	@each $breakpoint, $value-b in $list-b {
+		@if map-has-key($list-a, $breakpoint) {
+			$value-a: map-get($list-a, $breakpoint);
+			$value-result: $placeholder $placeholder $placeholder $placeholder;
+
+			@for $index from 1 through 4 {
+				$item: css-nth($value-b, $index);
+
+				@if $item == $placeholder {
+					$item: css-nth($value-a, $index);
+				}
+
+				@if $item != $placeholder {
+					$value-result: set-nth($value-result, $index, $item);
+				}
+			}
+
+			$list-result: map-merge($list-result, ($breakpoint: $value-result));
+		} @else {
+			$list-result: map-merge($list-result, ($breakpoint: $value-b));
+		}
+	}
+
+	@return $list-result;
+}

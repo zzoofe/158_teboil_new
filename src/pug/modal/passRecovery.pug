@@ -1,0 +1,7 @@
+.modal#passRecovery
+	+block('Восстановление пароля').modal__title.text-center.upp.mb-40
+	.flex.justify-center
+		form.max-w-356.grow-1.mb-30
+			.mb-20: input.form-input(type="text" value="" placeholder="+7 (___) ___-__-__" data-phone)
+			.mb-20: input.form-input(type="text" value="" placeholder="Код из СМС")
+			+button('Отправить').button-red.w-full

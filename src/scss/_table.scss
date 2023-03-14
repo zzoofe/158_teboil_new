@@ -1,0 +1,93 @@
+.table {
+  table {
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+  }
+  &-statistics {
+    table {
+      font-size: $fs-14;
+      line-height: 1.4;
+      tr {
+        th {
+          background: rgba(246, 246, 246, 0.42);
+          border-radius: 10px 10px 0 0;
+          padding: 15px 30px 15px 35px;
+          text-transform: uppercase;
+          font-weight: 700;
+          @include desktop-x {
+            padding: 9px 20px;
+            font-size: $fs-12;
+          }
+          @include mobile {
+            font-size: $fs-10;
+            padding: 9px 10px;
+          }
+          @include mobile-s {
+            font-size: $fs-8;
+            padding: 9px 5px;
+          }
+          &:first-child {
+            text-align: left;
+            @include mobile {
+              padding-left: 20px;
+            }
+            @include mobile-s {
+              padding-left: 10px;
+            }
+          }
+          &:last-child {
+            text-align: left;
+            @include mobile {
+              padding-right: 20px;
+            }
+            @include mobile-s {
+              padding-right: 10px;
+            }
+          }
+        }
+        td {
+          border-top: 1px solid #EFEFEF;
+          padding: 30px 30px 30px 35px;
+          text-align: center;
+          font-size: $fs-22;
+          font-weight: 600;
+          white-space: nowrap;
+          @include desktop-x {
+            padding: 29px 20px 30px 20px;
+          }
+          @include mobile {
+            padding: 26px 10px 25px 10px;
+          }
+          @include mobile-s {
+            font-size: $fs-14;
+            padding: 14px 5px;
+          }
+          &:first-child {
+            text-align: left;
+            font-size: $fs-14;
+            font-weight: 400;
+            @include mobile {
+              white-space: normal;
+              padding-left: 20px;
+            }
+            @include mobile-s {
+              font-size: $fs-12;
+              padding-left: 10px;
+            }
+          }
+          &:last-child {
+            text-align: left;
+            width: 1%;
+            @include mobile {
+              padding-right: 20px;
+            }
+            @include mobile-s {
+              padding-right: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

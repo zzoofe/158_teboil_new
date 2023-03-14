@@ -1,0 +1,8 @@
+mixin breadcrumbs(items)
+	.breadcrumbs&attributes(attributes)
+		ul.flex
+			each item, key in items
+				if (item.url)
+					li: a(href=item.url): != item.value
+				else
+					li: != item.value

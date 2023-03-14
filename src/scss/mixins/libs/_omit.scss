@@ -1,0 +1,7 @@
+@function omit($map, $keys) {
+	@each $key in $keys {
+		$map: map-remove($map, $key);
+	}
+
+	@return $map;
+}

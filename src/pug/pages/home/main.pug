@@ -1,0 +1,17 @@
+section.zero.h-full.js-lazy.bg-image.flex.flex-column(data-background-image=e.main.image)
+	.zero__head.flex.justify-start
+		a.flex(href="index.html")
+			+lazyImage({src: data.header.logo})
+
+	.zero__body.container.flex.justify-end.items-center.py-20.lp_justify-center.grow-1.mb_items-end.mb_py-0
+		form.zero__form.bg-white
+			.zero__logo.flex.justify-center: +lazyImage({src:'./images/icons/logo.svg'})
+			.mb-20: input.form-input(type="text" value="" placeholder="+7 (___) ___-__-__" data-phone)
+			.mb-20: input.form-input(type="password" value="" placeholder="Пароль")
+			+button(e.button.signIn).button-red.w-full
+			.mt-10: a.fs-14.cl-blue.link-blue(href="#passRecovery" data-fancybox): != e.main.restorePass
+
+	.zero__foot.relative.flex
+		+lazyImage({src:'./images/foot.svg'}).relative.zero__foot-image
+
+
