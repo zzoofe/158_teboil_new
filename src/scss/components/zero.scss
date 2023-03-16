@@ -59,14 +59,14 @@
     }
   }
   &__logo {
-    margin-bottom: 60px;
+    margin-bottom: 50px;
     @include mobile {
-      margin-top: -55px;
-      margin-bottom: 45px;
+      margin-top: -26px;
+      margin-bottom: 40px;
     }
     img {
       @include laptop {
-        width: 275px;
+        width: 222px;
       }
     }
   }
