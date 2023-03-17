@@ -153,6 +153,9 @@
     &-40 {
       margin-bottom: 40px;
     }
+    &-50 {
+      margin-bottom: 50px;
+    }
     &-60 {
       margin-bottom: 60px;
     }
@@ -289,6 +292,7 @@
 }
 .link {
   &-blue {
+    color: rgba(0, 71, 152, 1) !important;
     border-bottom: 1px solid rgba(0, 71, 152, 1);
     &:hover {
       border-color: rgba(0, 71, 152, 0);
@@ -310,7 +314,9 @@
 .letter {
 
 }
-
+.modal {
+  background: #004798;
+}
 @include laptop {
   .lp {
     &_justify {

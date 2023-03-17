@@ -1,18 +1,17 @@
-.button {
+.btn {
   line-height: 1.438;
   font-weight: 500;
   font-size: $fs-18;
   padding: 0 10px;
   overflow: hidden;
   height: 50px;
-  svg {
-    transition: $duration-normal;
-  }
+  border-radius: 0;
   &-red {
     background-color: #E7332B;
     color: #FFFFFF;
     &:hover {
       background-color: #004798;
+      color: #FFFFFF;
     }
   }
 }
