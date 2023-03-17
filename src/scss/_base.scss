@@ -1,45 +1,5 @@
-*,
-*::before,
-*::after {
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
-}
-:root {
-	font-size: $fs-base;
-}
-html,
-body {
-  min-height: 100vh;
-  height: 100%;
-}
-body {
-	-webkit-font-smoothing: antialiased;
-	text-decoration-skip: objects;
-	text-rendering: optimizeLegibility;
-	text-size-adjust: 100%;
-	-webkit-tap-highlight-color: transparent;
-  background: linear-gradient(0deg, #F6F6F6, #F6F6F6), #FFFFFF;
-  font-family: $font-primary;
-  font-weight: 400;
-  font-size: $fs-14;
-  line-height: 1.35;
-  color: $cl-black;
-}
-a,
-button {
-	outline: none !important;
-	transition: $duration-normal;
-	cursor: pointer;
-	text-decoration: none;
-}
-a {
-  color: #59A5FF;
-}
-svg {
-	display: block;
-	flex: 0 0 auto;
-	fill: none;
+.app {
+  min-width: 300px;
 }
 .js-lazy {
 	opacity: 0;
@@ -48,10 +8,20 @@ svg {
 		opacity: 1;
 	}
 }
-.app {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  min-width: 300px;
-  overflow: hidden;
+.link {
+  &-blue {
+    color: rgba(0, 71, 152, 1);
+    border-bottom: 1px solid rgba(0, 71, 152, 0.8);
+    &:hover {
+      color: rgba(0, 71, 152, 1);
+      border-bottom: 1px solid rgba(0, 71, 152, 0);
+      transition: all 0.3s ease;
+    }
+  }
+}
+picture {
+  width: 100%;
+  img {
+    width: 100%;
+  }
 }

@@ -1,22 +1,3 @@
-section.zero.h-full.js-lazy.bg-image.flex.flex-column
-	.zero__picture
-		span.js-lazy.ds_hidden.bg-image(data-background-image='./images/other/bg-zero@2x.webp')
-		span.js-lazy.hidden.ds_visible.lp_hidden.bg-image(data-background-image='./images/other/bg-zero-ds.webp')
-		span.js-lazy.hidden.lp_visible.mb_hidden.bg-image(data-background-image='./images/other/bg-zero-lp.webp')
-		span.js-lazy.hidden.mb_visible.bg-image(data-background-image='./images/other/bg-zero-mb.webp')
 
-	.zero__head.flex.justify-start
-		a.flex(href="index.html")
-			+lazyImage({src: data.header.logo})
-
-	.zero__body.flex.justify-end.items-center.py-20.lp_justify-center.grow-1.mb_items-end.mb_py-0
-		form.zero__form.bg-white
-			.zero__logo.flex.justify-center: +lazyImage({src:'./images/logo.svg'})
-			.form-group.mb-20: input.form-control.form-control-primary(type="text" value="" placeholder="+7 (___) ___-__-__" data-phone)
-			.form-group.mb-20: input.form-control.form-control-primary(type="password" value="" placeholder="Пароль")
-			+button(e.button.signIn).btn-red.w-full
-			.mt-10: a.fs-14.link-blue(data-toggle="modal" data-target="#passRecovery"): != e.main.restorePass
-	.zero__foot.relative.flex
-		+lazyImage({src:'./images/foot.svg'}).relative.zero__foot-image
 
 

@@ -317,6 +317,13 @@
 .modal {
   background: #004798;
 }
+.breadcrumb {
+  &-item {
+    &+&::before {
+      content: '>';
+    }
+  }
+}
 @include desktop-xxl {
   .ds {
     &_hidden {

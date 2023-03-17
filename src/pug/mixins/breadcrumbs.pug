@@ -1,8 +1,8 @@
 mixin breadcrumbs(items)
-	.breadcrumbs&attributes(attributes)
-		ul.flex
+	nav(aria-label="breadcrumb")&attributes(attributes)
+		ol(class="breadcrumb")
 			each item, key in items
 				if (item.url)
-					li: a(href=item.url): != item.value
+					li(class="breadcrumb-item"): a(href=item.url): != item.value
 				else
 					li: != item.value

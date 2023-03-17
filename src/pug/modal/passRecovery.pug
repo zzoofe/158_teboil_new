@@ -1,10 +1,9 @@
-div(class="modal fade" id="passRecovery" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true")
+.modal.fade#passRecovery(tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true")
 	.modal-dialog.modal-dialog-centered
 		.modal-content
 			button.modal-close(type="button" class="close" data-dismiss="modal" aria-label="Close")
-			+block('Восстановление пароля').modal-title.text-center.upp
-			.flex.justify-center
-				form.max-w-356.grow-1.mb-50
-					.form-group.mb-20: input.form-control.form-control-primary(type="text" placeholder="+7 (___) ___-__-__" data-phone)
-					.form-group.mb-20: input.form-control.form-control-primary(type="text" placeholder="Код из СМС")
-					+button('Отправить').btn-red.w-full
+			+block('Восстановление пароля').modal-title.text-center
+			form
+				.form-group: input.form-control.form-control-primary(type="text" placeholder="+7 (___) ___-__-__" data-phone)
+				.form-group: input.form-control.form-control-primary(type="text" placeholder="Код из СМС")
+				+button('Отправить').btn-red.w-full

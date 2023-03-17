@@ -1,3 +1,33 @@
 - e = data
-main.main
-	include home/main
+main.app
+	section.h-screen.flex.flex-col.relative(class="md:pb-16")
+		.grow.flex.flex-col.overflow-hidden.justify-end.grow(class="md:z-[-1] md:absolute md:inset-0")
+			+lazyPicture({
+				src: './images/other/bg-zero-ms.webp',
+				alt: '',
+				appear: false,
+			}, [
+				{
+					srcset: `./images/other/bg-zero-ds.webp`,
+					media: '(min-width: 992px)',
+				},
+				{
+					srcset: `./images/other/bg-zero-lp.webp`,
+					media: '(min-width: 768px)',
+				},
+				{
+					srcset: `./images/other/bg-zero-mb.webp`,
+					media: '(min-width: 500px)',
+				}
+			])
+		.flex.items-end(class="md:justify-center md:grow md:items-center md:p-5 lg:justify-end lg:p-24")
+			form.bg-white(class="w-full md:w-[395px] pb-12 px-8 lg:py-16")
+				.flex.justify-center.mb-12.px-10(class="mt-[-25px]"): +lazyImage({src: './images/logo.svg'})
+				.form-group: input.form-control.form-control-primary(type="text" placeholder="+7 (___) ___-__-__" data-phone)
+				.form-group: input.form-control.form-control-primary(type="password" placeholder="Пароль")
+				+button(e.button.signIn).btn-red.w-full
+				.mt-2: a.link-blue(href="javascript:void(0)" data-toggle="modal" data-target="#passRecovery"): != e.main.restorePass
+		.h-14.relative.hidden(class="md:flex md:mr-24")
+			+lazyImage({src: './images/foot.svg'})(
+				class="w-[1628]"
+			).h-14.absolute.right-0.top-0.max-w-none

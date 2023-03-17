@@ -26,7 +26,6 @@
     }
   }
   &__foot {
-    margin-right: 100px;
     margin-bottom: 64px;
     height: 60px;
     @include laptop {
@@ -76,7 +75,7 @@
       padding: 0;
     }
   }
-  &__picture {
+  &__imgs {
     position: absolute;
     left: 0;
     right: 0;
@@ -90,6 +89,9 @@
       right: 0;
       left: 0;
       top: 0;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
       @include mobile {
         bottom: 325px;
       }

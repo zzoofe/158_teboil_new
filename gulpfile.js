@@ -114,28 +114,13 @@ function svgoConfig(minify = argv.minifySvg) {
 	};
 }
 
-function cssTask(cb) {
-  return src("./src/*.css") .pipe(sourcemaps.init()) .pipe(postcss([ tailwindcss('./tailwind.config.js'), autoprefixer() ] )) .pipe(sourcemaps.write('.')) .pipe(dest("./assets/css")) .pipe(browserSync.stream()); cb();
-}
-
-gulp.task('cssTask', (cb) => {
-  return gulp.src('src/css/*.css')
-    .pipe(postcss(
-      [
-        tailwindcss('./tailwind.config.js'),
-        autoprefixer()
-      ]
-    ))
-    .pipe(gulp.dest('build/css'))
-});
-
 gulp.task('devStyles', () => {
   const tailwindcss = require("tailwindcss");
-  return gulp.src(`src/css/*.scss`)
+  return gulp.src(`src/scss/main.scss`)
     .pipe(sass().on("error", sass.logError))
     .pipe(gulp.dest('src/css/'))
     .pipe(postcss([tailwindcss('./tailwind.config.js')]))
-    .pipe(concat({ path: "style.css" }))
+    .pipe(concat({ path: "main.css" }))
     .pipe(gulp.dest('build/css/'));
 });
 
@@ -144,16 +129,6 @@ gulp.task('webp', () => {
     .pipe(webp())
     .pipe(gulp.dest('build/images/other/'));
 });
-
-// function devStyles() {
-//   const tailwindcss = require("tailwindcss");
-//   return src(`${options.paths.src.css}/**/*.scss`)
-//     .pipe(sass().on("error", sass.logError))
-//     .pipe(dest(options.paths.src.css))
-//     .pipe(postcss([tailwindcss(options.config.tailwindjs)]))
-//     .pipe(concat({ path: "style.scss" }))
-//     .pipe(dest(options.paths.dist.css));
-// }
 
 gulp.task('copy', () => {
 	return gulp.src([
@@ -420,12 +395,12 @@ gulp.task('watch', () => {
 		'src/pug/**/*.pug',
 	], {
 		delay: 0,
-	}, gulp.series('pug'))
+	}, gulp.series(['pug', 'devStyles']))
 		.on('all', (event, file) => {
 			global.emittyPugChangedFile = event === 'unlink' ? undefined : file;
 		});
 
-	gulp.watch('src/scss/**/*.scss', gulp.series('scss'));
+	gulp.watch('src/scss/**/*.scss', gulp.series('devStyles'));
 
 	gulp.watch('src/js/**/*.js', gulp.series('js'));
 });
@@ -524,7 +499,7 @@ gulp.task('build', gulp.series(
 		'sprites:png',
 		'sprites:svg',
     'webp',
-		'scss',
+		'devStyles',
 		'js',
 	),
 ));
