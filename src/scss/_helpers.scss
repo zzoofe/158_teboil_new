@@ -6,11 +6,11 @@
 		overflow: hidden;
 	}
 }
-.hidden {
-	display: none;
-}
 .is-hidden {
   display: none !important;
+}
+.hidden {
+  display: none;
 }
 .visible {
 	display: block;
@@ -317,6 +317,16 @@
 .modal {
   background: #004798;
 }
+@include desktop-xxl {
+  .ds {
+    &_hidden {
+      display: none;
+    }
+    &_visible {
+      display: block;
+    }
+  }
+}
 @include laptop {
   .lp {
     &_justify {
@@ -343,6 +353,12 @@
       &-end {
         align-items: flex-end;
       }
+    }
+    &_hidden {
+      display: none;
+    }
+    &_visible {
+      display: block;
     }
   }
 }
@@ -380,6 +396,12 @@
           padding-bottom: 0;
         }
       }
+    }
+    &_hidden {
+      display: none;
+    }
+    &_visible {
+      display: block;
     }
   }
 }

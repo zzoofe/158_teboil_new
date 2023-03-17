@@ -1,4 +1,14 @@
-section.zero.h-full.js-lazy.bg-image.flex.flex-column(data-background-image=e.main.image)
+section.zero.h-full.js-lazy.bg-image.flex.flex-column
+	.zero__picture
+		span.js-lazy.ds_hidden.bg-image(data-background-image='./images/other/bg-zero@2x.webp')
+		span.js-lazy.hidden.ds_visible.lp_hidden.bg-image(data-background-image='./images/other/bg-zero-ds.webp')
+		span.js-lazy.hidden.lp_visible.mb_hidden.bg-image(data-background-image='./images/other/bg-zero-lp.webp')
+		span.js-lazy.hidden.mb_visible.bg-image(data-background-image='./images/other/bg-zero-mb.webp')
+
+	.zero__head.flex.justify-start
+		a.flex(href="index.html")
+			+lazyImage({src: data.header.logo})
+
 	.zero__body.flex.justify-end.items-center.py-20.lp_justify-center.grow-1.mb_items-end.mb_py-0
 		form.zero__form.bg-white
 			.zero__logo.flex.justify-center: +lazyImage({src:'./images/logo.svg'})
