@@ -1,4 +1,11 @@
 - e = data
-	main.main
-		.container
+	main.main.grow.flex
+		.container.flex.flex-column
 			+breadcrumbs(e.breadcrumbs)
+			.flex.grow.gap-1
+				.grow.bg-blue(class="max-w-[190px]")
+				.grow.js-lazy.bg-cover.bg-center(data-background-image='./images/other/image-1.webp')
+				.grow.bg-gray(class="max-w-[190px]")
+			.flex(class="gap-2 mt-2.5")
+				a.grow.bg-blue.text-white.text-xl44.uppercase.px-8.font-black(class="h-[249px]" href="#") Аналитика
+				a.grow.bg-blue.text-white.text-xl44.uppercase.px-8.font-black(class="h-[249px]" href="#") Информация

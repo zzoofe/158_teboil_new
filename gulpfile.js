@@ -6,13 +6,14 @@ let del = require('del');
 let newer = require('gulp-newer');
 let webpackConfig = require('./webpack.config');
 
-const webp        = require('gulp-webp');
-
-const concat = require("gulp-concat");
-let postcss = require("gulp-postcss");
-let tailwindcss = require('tailwindcss');
-let autoprefixer = require('autoprefixer');
-const sass = require('gulp-sass');
+const webp         = require('gulp-webp');
+const concat       = require("gulp-concat");
+const postcss      = require("gulp-postcss");
+const tailwindcss  = require('tailwindcss');
+const autoprefixer = require('autoprefixer');
+const sass         = require('gulp-sass');
+const browserSync  = require('browser-sync').create();
+const reload       = browserSync.reload;
 
 let emittyPug;
 let errorHandler;
@@ -405,27 +406,13 @@ gulp.task('watch', () => {
 	gulp.watch('src/js/**/*.js', gulp.series('js'));
 });
 
-gulp.task('serve', () => {
-	let middleware = [];
-
-	if (argv.spa) {
-		middleware.push($.connectHistoryApiFallback());
-	}
-
-	$.browserSync
-		.create()
-		.init({
-			notify: false,
-			open: argv.open,
-			port: argv.port,
-			files: [
-				'./build/**/*',
-			],
-			server: {
-				baseDir: './build',
-				middleware,
-			},
-		});
+gulp.task('serve', function () {
+  browserSync.init({
+    server: {
+      baseDir: "./build"
+    }
+  });
+  gulp.watch("build/**/*").on("change", reload);
 });
 
 gulp.task('zip', () => {
