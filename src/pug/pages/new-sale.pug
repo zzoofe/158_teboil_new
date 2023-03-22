@@ -1,0 +1,46 @@
+main.main.grow.flex
+	.container.flex.flex-column
+		+title('Новая продажа', 'h1').h1
+		form.shadow-lg.mt-5.rounded-md.max-w-640.p-6.mb-4
+			.form-group.max-w-336
+				label(for="dateSale") Дата продажи
+				input.form-control.form-control-gray.form-control-date(type="text" id="dateSale" aria-describedby="dateSale" placeholder="__  __ ____ г.")
+			.form-group.max-w-336
+				label(for="innSale") Дата продажи
+				input.form-control.form-control-gray(type="text" id="innSale" aria-describedby="innSale" placeholder="ИНН (10 цифр для ЮЛ, 12  для ИП)")
+			.form-group.max-w-336
+				label(for="nameSale") Название
+				input.form-control.form-control-gray(type="text" id="nameSale" aria-describedby="nameSale" placeholder="ООО “Автозаполнение”")
+			.form-group.max-w-336
+				label(for="locSale") Адрес ЮЛ
+				input.form-control.form-control-gray(type="text" id="locSale" aria-describedby="locSale" placeholder="г. Москва Автозаполнение")
+			.form-group.max-w-336
+				label(for="sel1") Фактический адрес
+				select.form-control.form-control-gray(id="sel1")
+					option г. Москва ул. Б. Никитская 20
+					option г. Москва ул. Б. Никитская 10
+			hr.my-5
+			.d-flex
+				.form-group.max-w-336.w-full
+					label(for="sel2") SKU
+					select.form-control.form-control-gray.w-full(id="sel2")
+						option Выбрать из списка
+				.form-group.ml-2
+					label(for="sel3") Объем
+					select.form-control.form-control-gray.w-full(id="sel3")
+						option __
+				.form-group.ml-2
+					label(for="sel4") Кол-во
+					select.form-control.form-control-gray.w-full(id="sel4")
+						option __
+						option 1
+						option 2
+						option 3
+
+			.form-group.pt-5
+				label.font-weight-bold.mb-3 Копия документа продажи (до 10 фото)
+				.form-upload.relative
+					input.form-upload__input(id="up1" type="file")
+					label.form-upload__label(for="up1")
+						span Перетащите файлы или выберите на компьютере
+						b Выбрать файл

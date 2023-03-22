@@ -1,0 +1,36 @@
+- e = data
+	main.main.grow.flex
+		.container.flex.flex-column
+			+breadcrumbs(e.breadcrumbs)(class="xxl:mt-3")
+			.flex.grow.gap-1.flex-col(class="md:flex-row")
+				.grow.bg-blue.pb-10(class="md:max-w-[190px]")
+					.flex.justify-center(class="py-4 md:py-0 md:justify-end md:mb-8 md:mt-8")
+						+lazyImage({src:'./images/icons/logo-1.svg'})(
+							width="191" height="100" class="md:mr-[-90px] "
+						).relative.z-10
+					+menu(e.menu1).menu.menu-white.text-sm.w-full
+				.grow.js-lazy.bg-cover.bg-center.flex.items-end.pt-52.relative(data-background-image='./images/other/image-1.webp')
+					+lazyImage({src:'./images/other/wheel.webp'}).w-full
+					.js-lazy.absolute.bottom-0(
+						data-background-image='./images/other/panel.svg'
+						class="w-[484px] h-[208px] left-1/2 ml-[-242px]"
+					)
+				.grow.bg-gray.flex.flex-column.items-center.pt-8.text-center.text-blue.leading-snug(class="md:max-w-[190px]")
+					+lazyImage({src:'./images/icons/circle.svg'})(class="" width="100" height="100").rounded-full.mb-2
+					+block(e.user.name, 'b').text-base.font-bold
+					+block(e.user.post1, 'u').underline.decoration-1.mx-4.text-sm
+					+menu(e.userMenu).menu.text-sm.w-full.mt-3.text-uppercase
+					.grow.flex.items-end.w-full(class="text-sm p-3 md:justify-end md:p-2")
+						+block(e.button.logout, 'a', '#').text-sm.link-blue.leading-none
+			.flex.flex-col(class="gap-2 mt-2.5 md:flex-row")
+				a.grow.bg-blue.text-white.py-2(class="px-3 h-[150px] md:h-[200px] md:px-8 xxl:h-[249px]" href="#")
+					b.font-black.uppercase(class="text-xl xxl:text-xl44") Аналитика
+				a.grow.bg-blue.text-white.py-2(class="px-3 h-[150px] md:h-[200px] md:px-8 xxl:h-[249px]" href="#")
+					b.font-black.uppercase(class="text-xl xxl:text-xl44") Информация
+				a.grow.bg-blue.text-white.py-2.js-lazy.bg-cover.bg-center(
+					class="px-3 h-[150px] md:h-[200px] md:px-8 xxl:h-[249px]"
+					href="#"
+					data-background-image='./images/other/image-2.webp'
+				)
+					b.font-black.uppercase(class="text-xl xxl:text-xl44") Академия
+					+lazyImage({src:'./images/other/image-3.svg'})

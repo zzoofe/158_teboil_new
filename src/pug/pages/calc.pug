@@ -1,0 +1,41 @@
+main.main.d-flex.flex-grow-1
+	.container.flex.flex-column
+		+title('Калькулятор', 'h1').h1.mb-3
+		form.d-flex.align-items-end
+			.form-group.mb-0
+				label(for="sel1") Категория
+				select.form-control.form-control-gray.w-237(id="sel1")
+					option(disabled selected) Выбрать из списка
+					option Gold
+					option Diamond
+					option Silver
+					option Категория 1
+					option Категория 2
+					option Категория 3
+			.form-group.ml-2.mb-0
+				label(for="sel2") Тип
+				select.form-control.form-control-gray.w-237(id="sel2")
+					option(disabled selected) Выбрать из списка
+					option DL
+					option CVL
+			.form-group.ml-2.mb-0
+				label(for="sel3") Название
+				select.form-control.form-control-gray.w-237(id="sel3")
+					option(disabled selected) Выбрать из списка
+					option TEBOIL Hypoid 75W-90
+					option Fluid ES-MAX
+					option EP M 75W-90
+			.form-group.ml-2.mb-0
+				label(for="sel4") Объем
+				select.form-control.form-control-gray(id="sel4")
+					option(disabled selected) л
+					option 1л
+					option 4л
+					option 20л
+					option 200л
+			.form-group.ml-2.mb-0
+				label(for="sel5") Кол-во
+				input.form-control.form-control-gray.w-76(type="text" placeholder="шт" id="sel5")
+			.form-add.ml-2.d-flex-center: +svg('add')(width="24" height="24")
+			button.btn.btn-blue.btn-sm.ml-2 Рассчитать
+		+block(e.calc.itog).mt-5.text-xl.text-uppercase.font-weight-bold

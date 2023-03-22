@@ -1,0 +1,18 @@
+extends pug/base
+
+prepend vars
+	- title = 'TEBOIL'
+	- description = ''
+	- image = ''
+
+append vars
+	- link.icon = './favicon.png'
+
+block content
+	include pug/data
+	- e = data
+	- bread = e.bread[3]
+	.app.d-flex.flex-column
+		include pug/components/header-1
+		include pug/pages/balance
+		include pug/components/footer-1

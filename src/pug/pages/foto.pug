@@ -1,0 +1,19 @@
+main.main.d-flex.flex-grow-1
+	.container
+		+title('Фотоотчеты', 'h1').h1
+		.shadow-lg.mt-5.rounded-md.max-w-640.p-6.mb-4
+			.d-flex
+				.d-flex-center.bg-red.bl-100.mr-3
+					+svg('foto')(width="59" height="35")
+				.d-flex.flex-column
+					span: a.text-base.font-weight-bold.link-red-1(href="#") + Добавить фотоотчет
+					ul.text-m.ml-3.pl-0
+						li фото должны быть четкие;
+						li на фото должно быть видно всю полку с наборами 4+1;
+						li на фото должно быть видно постер с акцией (может быть на отдельном фото).
+			.max-w-500
+				.font-weight-bold.text-base.mt-6.mb-4 Фотоотчет апрель 2023
+				.photos
+					- for (var x = 0; x < 25; x++)
+						a(href="#"): +lazyImage({src: './images/icons/foto.svg'})
+				button.btn.btn-blue.w-full.mt-5 Еще фото

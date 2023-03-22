@@ -1,0 +1,23 @@
+main.main.flex-grow-1
+	.container
+		+title('Добавить участника', 'h1').h1
+		form.shadow-lg.rounded-lg.col-md-6.p-3.my-3.p-md-6.my-md-5
+			.form-group
+				label(for="a_name") Фамилия
+				input.form-control.form-control-gray(type="text" id="a_name" aria-describedby="name" value="Павлов")
+			.form-group
+				label(for="b_name") Имя
+				input.form-control.form-control-gray(type="text" id="b_name" aria-describedby="name" value="Павел")
+			.form-group
+				label(for="c_name") Отчество
+				input.form-control.form-control-gray(type="text" id="c_name" aria-describedby="name" value="Павлович")
+			.form-group
+				label(for="a_phone") Телефон
+				input.form-control.form-control-gray(type="text" id="a_phone" aria-describedby="phone" value="+7 (966) 765-21-22")
+			.form-group
+				label(for="a_email") E-mail
+				input.form-control.form-control-gray(type="text" id="a_email" aria-describedby="email" value="pavlov_76@mail.ru")
+			.form-group
+				select.form-control.form-control-gray
+					option Роль
+			button.btn.btn-red.btn-block(type="submit") Отправить

@@ -1,0 +1,25 @@
+main.main.d-flex.flex-grow-1
+	.container
+		.d-flex.gap-40.flex-column.flex-lg-row
+			.flex-grow-1
+				+title('Рейтинг март 2023').h1.mb-3
+				.box.p-5
+					.scroll.max-h-700.pr-4
+						table.table.table-rating
+							each item, key in e.rating
+								tr
+									td: span.table-rating-id.d-flex-center(class=item.idClass): != item.id
+									td: +lazyImage({src:'./images/other/image-4.webp'})
+									td.nowrap: != item.name
+									td.nowrap: b: != item.price
+			.flex-grow-1
+				+title('Рейтинг 2022 / 2023').h1.mb-3
+				.box.p-5
+					.scroll.max-h-700.pr-4
+						table.table.table-rating
+							each item, key in e.rating
+								tr
+									td: span.table-rating-id.d-flex-center(class=item.idClass): != item.id
+									td: +lazyImage({src: './images/other/image-4.webp'})
+									td.nowrap: != item.name
+									td.nowrap: b: != item.price

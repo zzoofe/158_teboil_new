@@ -10,6 +10,9 @@ append vars
 
 block content
 	include pug/data
-	.app.flex.flex-col.min-h-screen
-		include pug/pages/B2C-сustomer
-		include pug/components/footer
+	- e = data
+	- bread = e.bread[6]
+	.app.d-flex.flex-column
+		include pug/components/header-1
+		include pug/pages/rating
+		include pug/components/footer-1

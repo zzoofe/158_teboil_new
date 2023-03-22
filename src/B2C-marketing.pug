@@ -1,0 +1,16 @@
+extends pug/base
+
+prepend vars
+	- title = 'TEBOIL'
+	- description = ''
+	- image = ''
+
+append vars
+	- link.icon = './favicon.png'
+
+block content
+	include pug/data
+	.app.flex.flex-col.min-h-screen(class="pb-2.5 xxl:pb-0")
+		include pug/pages/B2C-marketing
+		include pug/components/footer-1
+		include pug/components/mess

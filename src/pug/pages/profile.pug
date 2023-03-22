@@ -1,0 +1,45 @@
+main.main.d-flex.flex-grow-1
+	.container
+		form.shadow-lg.rounded-md.max-w-640.p-6.mb-4
+			.d-flex.align-items-center.pb-4
+				+lazyImage({src: './images/icons/user.svg'}).mr-3
+				.d-flex.flex-column
+					+block('Павел Павлов', 'b').text-base
+					+block('Уровень', 'span').text-sm.mt-2
+					+block('Роль', 'span').text-sm.mt-2
+			hr.m-0
+			.d-flex.align-items-center.text-sm.min-h-90
+				.d-flex.flex-column.w-215
+					span Телефон
+					span.mt-2 E-mail
+				.d-flex.flex-column.flex-grow-1
+					b +7 (966) 765-21-22
+					b.mt-2 pavlov_76@mail.ru
+				a.link-red.lh-2(href="#") Изменить
+			hr.m-0
+			.d-flex.align-items-center.text-sm.min-h-90
+				.d-flex.flex-column.w-215 Пароль
+				b.flex-grow-1 **********
+				a.link-red.lh-2(href="#") Изменить
+			hr.m-0
+			.d-flex.align-items-center.text-sm.min-h-90
+				b.flex-grow-1.text-base Паспортные данные
+				a.link-blue.lh-2(href="#") Добавить
+			hr.m-0
+			.d-flex.align-items-center.text-sm.min-h-90
+				b.flex-grow-1.text-base ИНН
+				a.link-blue.lh-2(href="#") Добавить
+			hr.m-0
+			.d-flex.align-items-center.text-sm.min-h-90
+				b.flex-grow-1.text-base СНИЛС
+				a.link-blue.lh-2(href="#") Добавить
+			hr.m-0
+			.d-flex.align-items-center.text-sm.min-h-90
+				b.flex-grow-1.text-base Сохраненные карты
+				a.link-blue.lh-2(href="#") Добавить
+			.transfer-card.mb-5
+				.transfer-card__frame.d-flex.align-items-center
+					i.transfer-card__image.d-flex.align-items-center.justify-content-center: +lazyImage({src: './images/icons/card-1.svg'})(width="31" height="18")
+					span.flex-grow-1 MasterCard ****2890
+					i.transfer-card__clear: +svg('clear')(width="24" height="24")
+			hr.m-0

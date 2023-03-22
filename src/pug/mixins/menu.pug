@@ -4,10 +4,12 @@ mixin menu(items, active)
 			if(active === key)
 				li.is-active
 					a(href=item.url)
-						+svg(item.icon)(width="17" height="17")
 						!= item.value
+						if(item.icon)
+							+svg(item.icon)(width="18" height="18")
 			else
 				li
 					a(href=item.url)
-						+svg(item.icon)(width="17" height="17")
 						!= item.value
+						if(item.icon)
+							+svg(item.icon)(width="18" height="18")

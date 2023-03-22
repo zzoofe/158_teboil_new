@@ -1,11 +1,33 @@
-- e = data
-	main.main.grow.flex
-		.container.flex.flex-column
-			+breadcrumbs(e.breadcrumbs)
-			.flex.grow.gap-1
-				.grow.bg-blue(class="max-w-[190px]")
-				.grow.js-lazy.bg-cover.bg-center(data-background-image='./images/other/image-1.webp')
-				.grow.bg-gray(class="max-w-[190px]")
-			.flex(class="gap-2 mt-2.5")
-				a.grow.bg-blue.text-white.text-xl44.uppercase.px-8.font-black(class="h-[249px]" href="#") Аналитика
-				a.grow.bg-blue.text-white.text-xl44.uppercase.px-8.font-black(class="h-[249px]" href="#") Информация
+main.main.d-flex.flex-grow-1
+	.container.container-b2.d-flex.flex-column
+		.d-flex.flex-grow-1.gap-5.relative
+			.aside.aside-left.flex-grow-1.bg-blue.max-w-180
+				+menu(e.menu).menu.menu-white.text-sm.w-full
+			.flex-grow-1.js-lazy.bg-image.relative(
+				data-background-image='./images/other/image-5.webp'
+			)
+				.d-flex.align-items-center.justify-content-between.buttons.p-3.my-3.relative
+					span(data-burger): +svg('burger')(width="58" height="58")
+					span(data-user): +lazyImage({src: './images/icons/user-1.svg'})(width="44" height="44")
+
+				.logo.d-flex.py-2.py-md-5.justify-content-center
+					a(href="#").relative.d-flex
+						+lazyImage({src: './images/icons/logo-1.svg'})(width="191" height="100")
+
+			.aside.aside-right.flex-grow-1.bg-gray.d-flex.flex-column.pt-8.text-center.text-blue.leading-snug.max-w-180.align-items-center.pt-5
+				+lazyImage({src:'./images/icons/circle.svg'})(class="" width="100" height="100").rounded-full.mb-2
+				+block(e.user.name, 'b').text-base.font-bold
+				+block(e.user.post, 'u').underline.decoration-1.mx-4.text-sm
+				+menu(e.userMenu).menu.text-sm.w-full.mt-3.text-uppercase
+				.flex-grow-1.d-flex.w-full.align-items-end.text-sm.p-3.justify-content-end
+					+block(e.button.logout, 'a', '#').text-sm.link-blue.leading-none
+
+		.d-flex.gap-4.mt-1.flex-column.flex-md-row
+			a.text-white.flex-grow-1.h-250.d-flex.py-3.px-3.js-lazy.flex-column.h-lg-220.h-md-155.bg-image.px-md-5(
+				href="#" data-background-image='./images/other/image-6.webp'
+			)
+				b.fs-40.fw-9.upp.fs-lg-32.fs-md-24 Аналитика
+			a.text-white.flex-grow-1.h-250.d-flex.py-3.px-3.js-lazy.flex-column.h-lg-220.h-md-155.bg-image.px-md-5(
+				href="#" data-background-image='./images/other/image-7.webp'
+			)
+				b.fs-40.fw-9.upp.fs-lg-32.fs-md-24 Информация

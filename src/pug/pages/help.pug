@@ -1,0 +1,23 @@
+main.main.d-flex.flex-grow-1
+	.container
+		+title('Помощь', 'h1').h1
+		.shadow-lg.mt-5.rounded-md.max-w-640.p-6.mb-4
+			.help
+				.help-item.d-flex.align-items-center
+					+lazyImage({src: './images/icons/message.svg'})(width="30" height="30").mr-4.ml-2
+					.d-flex.flex-column.flex-grow-1
+						b.text-base Напишите нам в чате
+						span.text-sm Открыть чат
+					button.btn.btn-border.btn-sm Выбрать
+				.help-item.d-flex.align-items-center
+					+lazyImage({src: './images/icons/phone.svg'})(width="30" height="30").mr-4.ml-2
+					.d-flex.flex-column.flex-grow-1
+						b.text-base Позвоните нам
+						span.text-sm Пообщайтесь со специалистом
+					b.text-sm + 7 (999) 888 66 55
+				.help-item.d-flex.align-items-center
+					+lazyImage({src: './images/icons/email.svg'})(width="30" height="30").mr-4.ml-2
+					.d-flex.flex-column.flex-grow-1
+						b.text-base Напишите нам
+						span.text-sm Мы ответим в течении 1 рабочего дня
+					b.text-sm ррр@mail.com

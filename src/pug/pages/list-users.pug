@@ -1,0 +1,46 @@
+main.main.flex-grow-1
+	.container
+		+title('ДОБАВЛЕННЫЕ УЧАСТНИКИ', 'h1').h1.mb-4
+		.scroll.mb-4
+			table.table.table-primary
+				thead
+					tr
+						th.table-sel-th
+							.d-flex.items-center.justify-content-center
+								input(type="checkbox")
+								a(href="#").ml-3: +svg('arw-sort-blue')(width="12" height="9")
+						th(scope="col").text-center Фамилия
+						th(scope="col").text-center Имя
+						th(scope="col").text-center Отчество
+						th(scope="col").text-center Название ЮЛ
+						th(scope="col").text-center ИНН
+						th(scope="col").text-center Телефон
+						th(scope="col").text-center Почта
+						th(scope="col").text-center Статус
+						th(colspan="4").table-bg-none.p-0
+							button.btn.btn-red.btn-add Добавить
+				tbody
+					- for (var x = 0; x < 10; x++)
+						tr
+							td.table-bg-none: input(type="checkbox")
+							td Чехов
+							td Антон
+							td Павлович
+							td: span.table-nowrap ООО “ЧЕЛОВЕК В ФУТЛЯРЕ”
+							td.nowrap 67975 08767
+							td.nowrap +7 (929) 777 99 99
+							td.nowrap: a(href="mailto:ggg@mail.com").link-blue-1 ggg@mail.com
+							td.nowrap.text-center Не активен
+							td.p-0(width="50"): a(href="#").table-btn: +svg('edit')(width="24" height="24")
+							td.p-0(width="50"): a(href="#").table-btn: +svg('phone')(width="24" height="24")
+							td.p-0(width="50"): a(href="#").table-btn: +svg('email')(width="24" height="24")
+							td.p-0(width="50"): a(href="#").table-btn: +svg('close-red')(width="24" height="24")
+		nav(aria-label="Page navigation")
+			ul.pagination
+				li.page-item: a.page-link(href="#"): +svg('arw-prev')(width="24" height="24")
+				li.page-item: a.page-link(href="#") 1
+				li.page-item: a.page-link(href="#") 2
+				li.page-item: a.page-link(href="#") 3
+				li.page-item: span ...
+				li.page-item: a.page-link(href="#") 7
+				li.page-item: a.page-link(href="#"): +svg('arw-next')(width="24" height="24")

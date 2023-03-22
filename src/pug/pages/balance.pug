@@ -1,0 +1,43 @@
+main.main.flex-grow-1
+	.container
+		.d-flex.gap-80.gap-lp-30.flex-column.flex-lg-row
+			.w-280.w-md-full
+				+title('Баланс', 'h1').h1.mb-3
+				ul.tab-balance
+					li.is-active
+						i: +svg('star')(width="24" height="24")
+						span
+							| B2b БалЛы
+							b 999 999
+					li
+						i: +svg('star')(width="24" height="24")
+						span
+							| B2С БалЛы
+							b 999 999
+			.flex-grow-1
+				+title('История начислений').h5.font-weight-bold.mb-4
+				.scroll.mb-4
+					table.table.table-primary
+						thead
+							tr
+								th(scope="col" width="129").text-center
+									.d-flex.items-center.justify-content-center
+										span Дата
+										a(href="#").ml-3: +svg('arw-sort')(width="12" height="9")
+								th(scope="col" width="140").text-center Баллы
+								th(scope="col").nowrap Основание для начисления
+						tbody
+							- for (var x = 0; x < 10; x++)
+								tr
+									td.text-center 15.12.2022
+									td.text-center 9 000
+									td Основание для начисления
+				nav(aria-label="Page navigation")
+					ul.pagination
+						li.page-item: a.page-link(href="#"): +svg('arw-prev')(width="24" height="24")
+						li.page-item: a.page-link(href="#") 1
+						li.page-item: a.page-link(href="#") 2
+						li.page-item: a.page-link(href="#") 3
+						li.page-item: span ...
+						li.page-item: a.page-link(href="#") 7
+						li.page-item: a.page-link(href="#"): +svg('arw-next')(width="24" height="24")

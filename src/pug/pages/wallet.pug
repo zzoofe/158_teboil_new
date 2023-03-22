@@ -1,0 +1,20 @@
+main.main.flex-grow-1
+	.container
+		.d-flex.gap-80.gap-lp-30.flex-column.flex-lg-row
+			.w-280.w-md-full
+				+title('Кошелек', 'h1').h1.mb-3
+				.wallet
+					i: +svg('rub')(width="21" height="26")
+					span
+						| Общие средства
+						b 25 000 ₽
+			.flex-grow-1
+				+block('Перевести на карту').font-weight-bold.text-base.pt-5.mb-3
+				.transfer-card.max-w-548
+					.transfer-card__frame.d-flex.align-items-center
+						i.transfer-card__image.d-flex.align-items-center.justify-content-center: +lazyImage({src:'./images/icons/card-1.svg'})(width="31" height="18")
+						span.flex-grow-1 MasterCard ****2890
+						i.transfer-card__clear: +svg('clear')(width="24" height="24")
+					.d-flex.justify-content-end.mt-5
+						button.btn.btn-gray.w-185 Добавить карту
+						button.btn.btn-blue.w-185.ml-3 Выбрать

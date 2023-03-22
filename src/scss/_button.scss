@@ -6,11 +6,50 @@
   overflow: hidden;
   height: 50px;
   border-radius: 0;
+  @include mobile-s {
+    font-size: $fs-16;
+  }
   &-red {
     background-color: #E7332B;
     color: #FFFFFF;
     &:hover {
       background-color: #004798;
+      color: #FFFFFF;
+    }
+  }
+  &-add {
+    width: 174px;
+    font-size: $fs-14;
+    font-weight: 700;
+  }
+  &-blue {
+    background: #004798;
+    color: #FFFFFF;
+    &:hover {
+      background-color: #E7332B;
+      color: #FFFFFF;
+    }
+  }
+  &-gray {
+    background: #EEF2F8;
+    color: #004798;
+    &:hover {
+      background: #004798;
+      color: #FFFFFF;
+    }
+  }
+  &-sm {
+    height: 40px;
+    font-size: $fs-14;
+  }
+  &-border {
+    background: #FFFFFF;
+    border: 1px solid #004798;
+    color: #004798;
+    font-size: $fs-16;
+    padding: 0 16px;
+    &:hover {
+      background: #004798;
       color: #FFFFFF;
     }
   }

@@ -17,5 +17,62 @@
         border: 1px solid #000000;
       }
     }
+    &-gray {
+      background-color: #EEF2F8;
+      border: 0;
+      border-radius: 0;
+      height: 40px;
+      font-weight: 500;
+      font-size: $fs-16;
+      color: rgba(0, 71, 152, 1);
+      &:hover,
+      &:focus {
+        background-color: #EEF2F8;
+        color: rgba(0, 71, 152, 1);
+      }
+      &::placeholder {
+        color: rgba(0, 71, 152, 0.4);
+      }
+    }
+    &-date {
+      background-image: url(../images/icons/date.svg);
+      background-repeat: no-repeat;
+      background-position: 95% center;
+    }
+  }
+  &-upload {
+    max-width: 477px;
+    &__input {
+      display: block;
+      width: 100%;
+      height: 150px;
+      opacity: 0;
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 2;
+    }
+    &__label {
+      width: 100%;
+      height: 150px;
+      border: 1px dashed #004798;
+      border-radius: 5px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: $fs-14;
+      b {
+        font-weight: 700;
+        text-decoration: underline;
+        margin-top: 10px;
+      }
+    }
+  }
+  &-add {
+    background: #EEF2F8;
+    width: 48px;
+    height: 40px;
+    cursor: pointer;
   }
 }
