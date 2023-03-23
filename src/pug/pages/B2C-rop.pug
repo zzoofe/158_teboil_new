@@ -1,10 +1,10 @@
 main.main.d-flex.flex-grow-1
-	.container.container-b2.d-flex.flex-column
+	.container.container-b2.d-flex.flex-column.relative
 		.d-flex.flex-grow-1.gap-5.relative
 			.aside.aside-left.flex-grow-1.bg-blue.max-w-180(data-aside-left)
-				+menu(e.menu1).menu.menu-white.text-sm.w-full
+				+menu(e.menu2).menu.menu-white.text-sm.w-full
 			.flex-grow-1.js-lazy.bg-image.relative.d-flex.flex-column(
-				data-background-image='./images/other/image-8.webp'
+				data-background-image='./images/other/image-12.webp'
 			)
 				.d-flex.align-items-center.justify-content-between.buttons.p-3.my-3.relative.d-lg-none
 					span(data-burger): +svg('burger')(width="58" height="58")
@@ -17,26 +17,30 @@ main.main.d-flex.flex-grow-1
 				.info.relative.overflow-hidden
 					+lazyImage({src: './images/other/wheel.webp'}).info__image
 					.info__table
-						+lazyImage({src: './images/other/panel.svg'})
+						+lazyImage({src: './images/other/panel-2.svg'})
 
 			.aside.aside-right.flex-grow-1.bg-gray.d-flex.flex-column.pt-8.text-center.text-blue.leading-snug.max-w-180.align-items-center.pt-5(data-aside-right)
 				+lazyImage({src:'./images/icons/circle.svg'})(class="" width="100" height="100").rounded-full.mb-2
 				+block(e.user.name, 'b').text-base.font-bold
 				+block(e.user.post1, 'u').underline.decoration-1.mx-4.text-sm
-				+menu(e.userMenu1).menu.text-sm.w-full.mt-3.text-uppercase
+				+menu(e.userMenu2).menu.text-sm.w-full.mt-3.text-uppercase
 				.flex-grow-1.d-flex.w-full.align-items-end.text-sm.p-3.justify-content-end
 					+block(e.button.logout, 'a', '#').text-sm.link-blue.leading-none
 
-		.d-flex.gap-4.mt-1.flex-column.flex-md-row
-			a.text-white.flex-grow-1.h-250.d-flex.py-3.px-3.js-lazy.flex-column.h-lg-220.h-md-155.bg-image.px-md-5(
-				href="#" data-background-image='./images/other/image-6.webp'
+		.mt-1.down-info.down-info-4
+			ul.down-info__list
+				each item, key in e.list
+					li
+						span: != item.name
+						+lazyImage({src: './images/other/image-4.webp'})
+						i.d-flex-center(class=item.className): != item.id
+			a.text-white.h-250.d-flex.py-3.px-3.js-lazy.flex-column.h-lg-220.h-md-155.bg-image.px-md-5(
+				href="#" data-background-image='./images/other/image-10.webp'
 			)
-				b.fs-40.fw-9.upp.fs-ds-32.fs-lg-24 Аналитика
-			a.text-white.flex-grow-1.h-250.d-flex.py-3.px-3.js-lazy.flex-column.h-lg-220.h-md-155.bg-image.px-md-5(
-				href="#" data-background-image='./images/other/image-7.webp'
+			a.text-white.h-250.d-flex.py-3.px-3.js-lazy.flex-column.h-lg-220.h-md-155.bg-image.px-md-5(
+				href="#" data-background-image='./images/other/image-11.webp'
 			)
-				b.fs-40.fw-9.upp.fs-ds-32.fs-lg-24 Информация
-			a.text-white.flex-grow-1.h-250.d-flex.py-3.px-3.js-lazy.flex-column.h-lg-220.h-md-155.bg-image.px-md-5(
+			a.text-white.h-250.d-flex.py-3.px-3.js-lazy.flex-column.h-lg-220.h-md-155.bg-image.px-md-5(
 				href="#" data-background-image='./images/other/image-9.webp'
 			)
 				b.fs-40.fw-9.upp.fs-ds-32.fs-lg-24 Академия

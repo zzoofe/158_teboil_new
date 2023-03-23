@@ -8,8 +8,13 @@ mixin menu(items, active)
 						if(item.icon)
 							+svg(item.icon)(width="18" height="18")
 			else
-				li
-					a(href=item.url)
-						!= item.value
-						if(item.icon)
-							+svg(item.icon)(width="18" height="18")
+				if(item.url)
+					li
+						a(href=item.url)
+							!= item.value
+							if(item.icon)
+								+svg(item.icon)(width="18" height="18")
+				else
+					li.d-flex.justify-content-between
+						span.pr-0: != item.label
+						span.pl-0: != item.value

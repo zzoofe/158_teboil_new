@@ -1,14 +1,29 @@
 const init = () => {
 	const burger = document.querySelector('[data-burger]')
   const user = document.querySelector('[data-user]')
-  const app = document.querySelector('.app')
+  const asideLeft = document.querySelector('[data-aside-left]')
+  const asideRight = document.querySelector('[data-aside-right]')
   const body = document.querySelector('body')
 
 	if (burger) {
     burger.addEventListener('click', function () {
-      this.classList.toggle('is-active')
+      asideLeft.classList.toggle('is-active')
     })
 	}
+
+  if (user) {
+    user.addEventListener('click', function () {
+      asideRight.classList.toggle('is-active')
+    })
+  }
+
+  document.addEventListener( 'click', (e) => {
+    const el = e.composedPath().includes(asideLeft);
+    console.log(el)
+    if(!el) {
+      //asideLeft.classList.remove('is-active')
+    }
+  })
 }
 
 export default {
