@@ -4,6 +4,7 @@ mixin block(value, tag, url)
 		when 'span': span&attributes(attributes): != value
 		when 'b': b&attributes(attributes): != value
 		when 'i': i&attributes(attributes): != value
+		when 'u': u&attributes(attributes): != value
 		when 'a': a(href=url)&attributes(attributes): != value
 		default: div&attributes(attributes): != value
 

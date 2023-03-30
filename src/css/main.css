@@ -592,6 +592,9 @@ picture {
 .fw-9 {
   font-weight: 900; }
 
+.fh-1 {
+  line-height: 1.1; }
+
 .upp {
   text-transform: uppercase; }
 
@@ -723,6 +726,9 @@ picture {
         font-style: normal; }
         .down-info__list li i.is-red {
           background: #E7332B; }
+
+.underline {
+  text-decoration: underline; }
 
 @media (min-width: 1200px) {
   .container {
